@@ -2,7 +2,6 @@
 import 'core-js/modules/es6.object.assign'
 import { unpromiser, retry, warn } from './utils'
 import { LocalStorage, MemoryStorage } from './auth_storage'
-import { AppToken as AppTokenV2, getAppToken as getAppTokenV2 } from './auth_v2'
 import * as auth from './auth_v3'
 import * as data from './data'
 import * as cozyFetch from './fetch'
@@ -162,7 +161,6 @@ class Client {
       Client: ClientV3,
       AccessToken: AccessTokenV3,
       AppToken: AppTokenV3,
-      AppTokenV2: AppTokenV2,
       LocalStorage: LocalStorage,
       MemoryStorage: MemoryStorage
     }

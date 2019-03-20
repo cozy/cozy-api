@@ -47,4 +47,5 @@ jspm_packages
 .tmp
 
 # Releases
-# dist
+dist
+build

@@ -1,4 +1,4 @@
-/* global btoa */
+import btoa from 'btoa'
 import { encodeQuery, decodeQuery, isOffline } from './utils'
 import { cozyFetchJSON, FetchError } from './fetch'
 

@@ -2,16 +2,17 @@
   "name": "cozy-client-js",
   "version": "0.15.0",
   "description": "Javascript library to interact with a cozy",
-  "main": "dist/cozy-client.node.js",
-  "browser": "dist/cozy-client.js",
+  "main": "dist/index.js",
+  "browser": "build/cozy-client.js",
   "files": [
     "dist",
-    "docs"
+    "docs",
+    "build"
   ],
   "scripts": {
     "build:web": "NODE_TARGET=web webpack",
     "build:web:min": "NODE_ENV=production NODE_TARGET=web webpack",
-    "build:node": "NODE_ENV=production NODE_TARGET=node webpack",
+    "build:node": "babel --out-dir dist/ src/",
     "build": "npm-run-all --parallel 'build:*' 'build:*:*'",
     "lint": "eslint '{src,test}/**/*.{js,jsx}'",
     "prettier": "prettier --write '{src,test}/**/*.{js,jsx}' && eslint --fix '{src,test}/**/*.{js,jsx}'",
@@ -62,6 +63,7 @@
     "webpack-node-externals": "1.7.2"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
     "core-js": "^2.5.3",
     "isomorphic-fetch": "^2.2.1",
     "pouchdb-browser": "7.0.0",
